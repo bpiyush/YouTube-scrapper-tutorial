@@ -114,3 +114,15 @@ def save_txt(data: dict, path: str):
     lines = "\n".join(data)
     with open(path, "w") as f:
         f.write(str(lines))
+
+
+def load_youtube_api(filename="../secrets/youtube_api.json"):
+    """Loads the youtube api key from a json file.
+
+    Args:
+        filename (str, optional): path to the json file. Defaults to "../secrets/youtube_api.json".
+
+    Returns:
+        str: youtube api key
+    """
+    return load_json(filename)["api_key"]
